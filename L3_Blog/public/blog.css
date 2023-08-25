@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+.container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 0.2fr 1fr;
+}
+.sidebar{
+    background-color: rgb(24, 24, 66);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 7rem;
+    padding: 10px;
+}
+.side_title > p{
+    font-size: 10px;
+}
+.side_title > h4{
+    font-size: 20px;
+}
+ ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+ul li {
+    cursor: pointer;
+    font-size: 13px;
+}
