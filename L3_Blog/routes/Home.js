@@ -5,7 +5,7 @@ const router = express.Router()
 
 
 router.get('/', function (req, res) {
-  res.render('BlogPage',{name:"blog"})
+  res.render('SignIn',{name:"register"})
   });
 
   module.exports = router;

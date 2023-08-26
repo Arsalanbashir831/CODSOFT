@@ -7,13 +7,66 @@
             <p>Creative React Blog Template</p>
         </div>
         <ul>
-        <li>BLOG</li>
-        <li>POSTS</li>  
+        <li>HOME</li>
+        <li>ADD POST</li>
         <li>DASHBOARD</li>  
         <li>LOGOUT</li>  
     </ul>
     </div>
-    <div class="content"></div>
+    <div class="content">
+        <div class="search_container">
+            <input type="search" name="search" id="search" placeholder="Search Blog">
+        </div>
+        <div class="latest_container">
+            <h2>Our Stories</h2>
+            <div class="card_container">
+              
+              <div class="blog_container">
+                <div class="card">
+                    <img style="width: 100%;" src="./images/dummy.jpg" alt="">
+                    <h3>Card Title</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, hic dolorem vero ipsa consequatur iusto, accusantium labore cumque odio incidunt facilis similique libero. Odit a fugiat quis neque dolore ipsa?</p>
+                    <br>
+                    <a style="background: none; border: none; color: blue; cursor: pointer; ">Read More</a>
+                </div>
+                <div class="card">
+                    <img style="width: 100%;" src="./images/dummy.jpg" alt="">
+                    <h3>Card Title</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, hic dolorem vero ipsa consequatur iusto, accusantium labore cumque odio incidunt facilis similique libero. Odit a fugiat quis neque dolore ipsa?</p>
+                    <br>
+                    <a style="background: none; border: none; color: blue; cursor: pointer; ">Read More</a>
+                </div>
+              </div>
+               
+                
+                
+                <div>
+                    <h2 style="text-align: center; font-size: 12px;">Recent Posts</h2>
+                    <div class="post_card">
+                        <img width="100px" src="./images/dummy.jpg" alt="">
+                        <div class="content">
+                            <h6>Card title</h6>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque dolorem corporis vitae beatae </h6>
+                        </div>
+                    </div>
+
+
+                    <div>
+                        <h2 style="text-align: center; font-size: 12px;">Categories</h2>
+                        <div class="post_card">
+                            <img width="100px" src="./images/dummy.jpg" alt="">
+                            <div class="content">
+                                <h6>Card title</h6>
+                                <p> 100</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
 </div>
 
 <%- include('Footer'); -%>
