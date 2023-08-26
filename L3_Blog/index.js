@@ -1,10 +1,12 @@
 const express = require('express')
 const mongoose=require('mongoose')
 const path = require('path')
+const fileUpload = require('express-fileupload');
 require('dotenv').config();
 
 
 const app = express()
+app.use(fileUpload({}));
 // view engine setup
 const cookieParser = require("cookie-parser");
 const sessions = require('express-session');
@@ -24,6 +26,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'uploads')));
+
 
 // routers 
 const indexRouter = require('./routes/Home')
