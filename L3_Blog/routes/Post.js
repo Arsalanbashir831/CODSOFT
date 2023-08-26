@@ -7,24 +7,19 @@ const Post = require('../models/PostModal');
 const fs = require('fs');
 
 router.post('/addPost', async (req, res) => {
+   
+  if (req.session.userId === undefined || req.session.userId === "") {
+    return res.redirect('/');
+  }
   try {
     const { title, category, desc, picture } = req.body;
-    const userId = req.session.userId;
-    
-    if (userId === undefined || userId === "") {
-      return res.redirect('/');
-    }
-    
+    const userId = req.session.userId; 
     const latestPost = await Post.findOne().sort({ PostId: -1 });
     let newId = 1;
     
     if (latestPost) {
       newId = latestPost.PostId + 1;
     }
-    
-  
-    
-
    
     if (req.files && req.files.picture) {
       const picture = req.files.picture;
@@ -37,8 +32,6 @@ router.post('/addPost', async (req, res) => {
         }
       });
     }
-    // console.log(req.files.picture);
-
     const newPost = new Post({
       PostId: newId,
       UserId: userId,
