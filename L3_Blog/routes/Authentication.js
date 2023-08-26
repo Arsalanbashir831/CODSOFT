@@ -32,7 +32,6 @@ router.post('/registerUser', async (req, res) => {
       res.status(500).json({ error: 'An error occurred' });
     }
   });
-
   router.post('/signInUser', async (req, res) => {
     try {
       const { username, email, password } = req.body;  
@@ -41,12 +40,11 @@ router.post('/registerUser', async (req, res) => {
         $or: [{ username }, { email }],
         password,
       });
-  
       if (user) {
         req.session.userId= user.userId;
-          
+      res.redirect('/Blog')
       } else {
-        res.status(401).json({ error: 'Invalid credentials' }); // customized response needed   
+        res.status(401).json({ error: 'Invalid credentials' }); 
       }
     } catch (error) {
       console.error(error);
