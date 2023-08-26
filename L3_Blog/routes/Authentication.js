@@ -14,6 +14,7 @@ router.post('/registerUser', async (req, res) => {
         newId = latestUser.userId + 1;
       }
       if(req.body.password === req.body.confirmPassword){
+      
       const newUser = new User({
         userId: newId,
         username: req.body.username,
@@ -42,7 +43,8 @@ router.post('/registerUser', async (req, res) => {
       });
   
       if (user) {
-        res.json(user); // You can customize the response as needed
+        req.session.userId= user.userId;
+          
       } else {
         res.status(401).json({ error: 'Invalid credentials' }); // customized response needed   
       }
